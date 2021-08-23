@@ -9,7 +9,16 @@
 <br>
 <ul>
 {% for file in content['files'] %}
-  <li> {{file}} </li>
-{% endfor %}
+
+  <li> {{file}}
+    <form method="post" action="/multialigner">
+      <input type="hidden" name="project_id" id="project_id" value="{{ content['project_id'] }}">
+      <input type="hidden" name="filename" id="filename" value="{{file}}">
+      <input type="submit" value="Send Request">
+    </form>
+  </li>
+
+{% endfor %} 
 </ul>
+
 {% endblock %}
