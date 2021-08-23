@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1> This is the - MAFFT - FASTTREE - Container </h1>
+{% endblock %}
+
+{% block content %}
+{{ content['greeting'] }}
+<br>
+<ul>
+{% for file in content['files'] %}
+  <li> {{file}} </li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% block header %}
+<h1> This is the - TASK - SCHEDULER - Container </h1>
+{% endblock %}
+
+{% block content %}
+<h2> Current data content: </h2>
+
+<ul>
+{% for project_id in content['project_folders'] %}
+  <li> {{project_id}} <form method="post"> <input type="hidden" name="project_id" id="project_id" value="{{project_id}}"> <input type="submit" value="Send Request"> </form> </li>
+{% endfor %}
+</ul>
+
+<!--
+<br>
+<form method="post">
+  <label for="project_id"> Enter your project identifier: </label>
+  <input type="number" name="project_id" id="project_id" value="{{ request.form['project_id'] }}" required>
+  <input type="submit" value="Submit Request">
+</form>
+-->
+{% endblock %}

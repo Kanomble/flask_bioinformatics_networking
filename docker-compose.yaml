@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: flask_api.dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./flask_web_api:/application
+      - ./data:/application/data
+    networks:
+      - backend
+  tools:
+    build:
+      context: .
+      dockerfile: bioinformatics.dockerfile
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./flask_mafft_fasttree:/application
+      - ./data:/application/data
+    networks:
+      - backend
+
+networks:
+  backend:
