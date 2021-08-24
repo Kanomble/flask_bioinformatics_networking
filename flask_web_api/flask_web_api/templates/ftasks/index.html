@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+
 {% block header %}
 <h1> This is the - TASK - SCHEDULER - Container </h1>
 {% endblock %}
@@ -7,7 +9,7 @@
 
 <ul>
 {% for project_id in content['project_folders'] %}
-  <li> {{project_id}} <form method="post"> <input type="hidden" name="project_id" id="project_id" value="{{project_id}}"> <input type="submit" value="Send Request"> </form> </li>
+  <li> Project Number: {{project_id}} <form method="post"> <input type="hidden" name="project_id" id="project_id" value="{{project_id}}"> <input type="submit" value="Send Request"> </form> </li>
 {% endfor %}
 </ul>
 
